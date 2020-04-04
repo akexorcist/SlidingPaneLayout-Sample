@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidX SlidingPaneLayout</string>
+    <string name="our_interesting_books">Our interesting books</string>
+    <string name="please_select_book_to_see_detail">Please select the book to see the detail</string>
+    <string name="select_book">Select the book</string>
+    <string name="page_count">%1$d pages</string>
+    <string name="book_description">\t\t%1$s</string>
+    <string name="no_book_description">No description for this book</string>
+</resources>

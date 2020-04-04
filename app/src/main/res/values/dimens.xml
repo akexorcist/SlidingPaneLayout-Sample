@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="shadow_height">8dp</dimen>
+    <dimen name="text_title_size">20sp</dimen>
+    <dimen name="text_content_size">16sp</dimen>
+    <dimen name="text_detail_size">12sp</dimen>
+    <dimen name="text_menu_size">16sp</dimen>
+    <dimen name="extra_line_spacing">8sp</dimen>
+</resources>

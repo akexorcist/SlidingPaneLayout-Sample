@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_large">
+
+            <TextView
+                android:id="@+id/textViewIsbn"
+                style="@style/Text.Detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1933988673" />
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                style="@style/Text.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewIsbn"
+                tools:text="Unlocking Android" />
+
+            <TextView
+                android:id="@+id/textViewAuthors"
+                style="@style/Text.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/imageViewThumbnail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+                tools:text="W. Frank Ableson" />
+
+            <TextView
+                android:id="@+id/textViewPublishedDate"
+                style="@style/Text.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintEnd_toEndOf="@id/textViewAuthors"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewAuthors"
+                tools:text="04 Jan 2009" />
+
+            <TextView
+                android:id="@+id/textViewPageCount"
+                style="@style/Text.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/textViewAuthors"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPublishedDate"
+                tools:text="416 pages" />
+
+            <TextView
+                android:id="@+id/textViewCategories"
+                style="@style/Text.Detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintEnd_toEndOf="@id/textViewAuthors"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPageCount"
+                app:layout_goneMarginTop="@dimen/margin"
+                tools:text="Java" />
+
+            <ImageView
+                android:id="@+id/imageViewThumbnail"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="3:4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
+
+            <ProgressBar
+                android:id="@+id/progressBarThumbnail"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewThumbnail"
+                app:layout_constraintEnd_toEndOf="@id/imageViewThumbnail"
+                app:layout_constraintStart_toStartOf="@id/imageViewThumbnail"
+                app:layout_constraintTop_toTopOf="@id/imageViewThumbnail" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierBookDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="imageViewThumbnail,textViewCategories" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                style="@style/Text.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:lineSpacingExtra="@dimen/extra_line_spacing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrierBookDetail"
+                tools:text="Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Text.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            android:text="@string/please_select_book_to_see_detail" />
+
+        <Button
+            android:id="@+id/buttonSelectBook"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/select_book" />
+    </LinearLayout>
+</FrameLayout>
