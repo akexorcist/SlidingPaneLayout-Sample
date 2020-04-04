@@ -19,10 +19,6 @@ import kotlinx.android.synthetic.main.fragment_detail.*
 class DetailFragment : Fragment() {
     private val viewModel: BookViewModel by activityViewModels()
 
-    companion object {
-        private const val EXTRA_BOOK = "extra_book"
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
